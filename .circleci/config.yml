@@ -15,7 +15,7 @@ jobs:
 
     parallelism: 4
 
-    working_directory: ~/codebase/URL/url-shortener-rails
+    working_directory: ~/URL_SHORTENER/shortencrafts-rails
 
     steps:
       - checkout
