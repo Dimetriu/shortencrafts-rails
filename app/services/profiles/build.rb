@@ -9,7 +9,10 @@ class Profiles::Build < BaseBuild
     resource[:session_id] = SecureRandom.uuid
     # Saving Users profile if valid
     super
-    # Logging in User
+    # Logging in User if there aren't errors
+    !resource.valid? &&
+    resource.errors.messages ||
     JsonWebToken.encode(session_id: resource.session_id)
   end
+
 end

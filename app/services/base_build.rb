@@ -8,7 +8,7 @@ class BaseBuild
   def call
     # ensure to call super in Children classes
     # to perform the persistance
-    resource.valid? && resource.save || resource.errors
+    resource.valid? && resource.save || resource.errors.full_messages
   end
 
   def self.call(resource, **options)
