@@ -8,6 +8,11 @@ class Api::V1::ProfilesController < ApiController
   private
 
   def profile_params
-    params.permit()
+    params.permit(
+      :username,
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
 end

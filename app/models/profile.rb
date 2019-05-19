@@ -10,7 +10,10 @@ class Profile < ApplicationRecord
     email: true,
     uniqueness: true
 
-  validates :password, :password_confirmation,
+  validates :password,
+    confirmation: true
+
+  validates :password_confirmation,
     presence: true
 
   def verify_email!
