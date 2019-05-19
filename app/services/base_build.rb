@@ -16,7 +16,7 @@ class BaseBuild
     self.new(resource, **options).call
   end
 
-  protected
+  # protected
 
   attr_reader :resource
 end

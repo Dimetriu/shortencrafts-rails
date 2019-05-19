@@ -10,7 +10,8 @@ class Profile < ApplicationRecord
     email: true,
     uniqueness: true
 
-  validates :password_digest, presence: true
+  validates :password, :password_confirmation,
+    presence: true
 
   def verify_email!
     return self[:confirmed_at] if self[:confirmed_at]
