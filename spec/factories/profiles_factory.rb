@@ -3,7 +3,7 @@ FactoryBot.define do
     firstname, lastname = Faker::Name.name.split.last(2)
     password = Faker::Internet.password(10, 20, true)
 
-    username { Faker::Internet.username }
+    username { Faker::Internet.username(3) }
     firstname { firstname }
     lastname { lastname }
     email { Faker::Internet.safe_email }

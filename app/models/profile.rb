@@ -11,4 +11,13 @@ class Profile < ApplicationRecord
     uniqueness: true
 
   validates :password_digest, presence: true
+
+  def verify_email!
+    return self[:confirmed_at] if self[:confirmed_at]
+    self.update_attributes(confirmed_at: DateTime.current)
+  end
+
+  def verified?
+    self[:confirmed_at] && true || false
+  end
 end

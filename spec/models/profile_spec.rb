@@ -38,4 +38,28 @@ RSpec.describe Profile, type: :model do
   context "when valid password" do
     it { should validate_presence_of(:password) }
   end
+
+  context "when email is not verified" do
+    describe "#vrified?" do
+      it "returns `false` unless email verified" do
+        expect(profile.verified?).to be_falsy
+      end
+    end
+  end
+
+  context "when verifying email" do
+    before(:each) { profile.verify_email! }
+
+    describe "#vrify_email!" do
+      it "sets `confirmed_at` to current date and time" do
+        expect(profile.confirmed_at).not_to be_nil
+      end
+    end
+
+    describe "#vrified?" do
+      it "returns `true` if email verified" do
+        expect(profile.verified?).to be_truthy
+      end
+    end
+  end
 end
