@@ -71,5 +71,5 @@ workflows:
   version: 2
   shortencrafts-rails:
     jobs:
-      - run-tests:
+      - build:
           context: Shortencrafts-rails
