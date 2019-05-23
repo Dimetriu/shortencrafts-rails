@@ -1,4 +1,4 @@
-class Api::V1::AppController < ApiController
+class Api::V1::AppController < ApplicationController
   # Root
   def index
   end

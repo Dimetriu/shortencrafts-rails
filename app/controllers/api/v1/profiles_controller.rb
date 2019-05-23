@@ -1,4 +1,4 @@
-class Api::V1::ProfilesController < ApiController
+class Api::V1::ProfilesController < ApplicationController
 
   # POST
   def create
