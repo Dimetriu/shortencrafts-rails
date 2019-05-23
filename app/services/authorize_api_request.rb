@@ -18,7 +18,7 @@ class AuthorizeApiRequest
   def profile
 
     if decoded_auth_token
-      @_profile ||= Profile.find(decoded_auth_token[:session_id])
+      @_profile ||= Profile.find(decoded_auth_token[:session_key])
       return @_profile
     end
 
