@@ -20,6 +20,6 @@ class Api::V1::SessionsController < ApplicationController
   private
 
   def sign_in_params
-    params.permit(:email, :password)
+    params.permit(:username, :email, :password)
   end
 end
