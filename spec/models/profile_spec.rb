@@ -7,6 +7,7 @@ RSpec.describe Profile, type: :model do
 
   context "when valid username" do
     it { should validate_presence_of(:username) }
+    it { should validate_uniqueness_of(:username) }
     it do
       should validate_length_of(:username)
       .is_at_least(3)
@@ -36,8 +37,7 @@ RSpec.describe Profile, type: :model do
   end
 
   context "when valid password" do
-    it { should validate_confirmation_of(:password) }
-    it { should validate_presence_of(:password_confirmation) }
+    it { should validate_presence_of(:password_digest) }
   end
 
   context "when email is not verified" do

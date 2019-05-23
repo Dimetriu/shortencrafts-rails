@@ -19,16 +19,15 @@ ActiveRecord::Schema.define(version: 2019_05_16_072538) do
 
   create_table "profiles", force: :cascade do |t|
     t.string "username", default: "", null: false
-    t.string "firstname", default: ""
-    t.string "lastname", default: ""
     t.string "email", default: "", null: false
     t.string "password_digest", default: "", null: false
     t.uuid "verification_token", default: -> { "uuid_generate_v4()" }, null: false
-    t.uuid "session_id"
+    t.uuid "session_key"
     t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_profiles_on_email", unique: true
+    t.index ["username"], name: "index_profiles_on_username", unique: true
   end
 
 end

@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
 
   validates :username,
     presence: true,
+    uniqueness: true,
     length: { in: 3..25 }
 
   validates :email,
@@ -10,11 +11,7 @@ class Profile < ApplicationRecord
     email: true,
     uniqueness: true
 
-  validates :password,
-    confirmation: true
-
-  validates :password_confirmation,
-    presence: true
+  validates :password_digest, presence: true
 
   def verify_email!
     return self[:confirmed_at] if self[:confirmed_at]

@@ -14,19 +14,7 @@ class Api::V1::ProfilesController < ApiController
 
   end
 
-  # PATCH/PUT
-  def update
-    profile = Profile.find(params[:id])
-
-    if profile.update_attributes(params_for_update)
-      render json: { profile: profile },
-      status: :updated
-    else
-      render json: { errors: profile.errors.messages },
-      status: :unprocessable_entity
-    end
-  end
-
+  # PATCH
   def verify_email
 
   end
@@ -42,7 +30,4 @@ class Api::V1::ProfilesController < ApiController
     )
   end
 
-  def params_for_update
-    params.permit(:firstname, :lastname)
-  end
 end
