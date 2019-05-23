@@ -17,6 +17,14 @@ class BaseBuild
     self.new(resource, **options).call
   end
 
+  def success
+    resource && resource.valid?
+  end
+
+  def failure
+    !success
+  end
+
   def errors
     @errors = resource.valid? || resource.errors.messages
   end
