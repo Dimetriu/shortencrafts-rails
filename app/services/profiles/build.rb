@@ -1,5 +1,7 @@
 # ./services/base_build.rb
 class Profiles::Build < BaseBuild
+  attr_reader :token
+
   def initialize(resource = Profile, **options)
     super(resource, **options)
   end
@@ -9,8 +11,10 @@ class Profiles::Build < BaseBuild
     # Saving Users profile if valid
     super
     # Logging in User if there aren't errors
-    !resource.valid? &&
-    resource.errors.messages ||
-    JsonWebToken.encode(session_key: resource.session_key)
+    @token = !resource.valid? &&
+             resource.errors.messages ||
+             JsonWebToken.encode(session_key: resource.session_key)
+
+    resource
   end
 end

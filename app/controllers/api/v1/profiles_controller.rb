@@ -5,6 +5,11 @@ class Api::V1::ProfilesController < ApplicationController
     new_profile = Profiles::Build.new(profile_params)
 
     if new_profile.call
+      cookies.signed[:jwt] = {
+        value: new_profile.token,
+        httponly: true
+      }
+
       render json: { profile: new_profile },
       status: :created
     else
