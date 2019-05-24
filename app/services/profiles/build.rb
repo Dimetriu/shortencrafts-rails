@@ -13,7 +13,7 @@ class Profiles::Build < BaseBuild
     # Logging in User if there aren't errors
     @token = !resource.valid? &&
              resource.errors.messages ||
-             JsonWebToken.encode(session_key: resource.session_key)
+             JsonWebToken.encode(profile_id: resource.id)
 
     resource
   end

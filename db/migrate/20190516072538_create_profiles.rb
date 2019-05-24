@@ -21,8 +21,6 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
         null: false,
         default: 'uuid_generate_v4()'
 
-      t.uuid :session_key, default: ''
-
       t.datetime :confirmed_at
 
       t.timestamps

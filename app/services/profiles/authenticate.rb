@@ -24,9 +24,7 @@ class Profiles::Authenticate
   def produce_token
     return (error[:credentials] = "Invalid credentials") unless profile
 
-    profile.update_attributes(session_key: SecureRandom.uuid)
-
-    @token = JsonWebToken.encode(session_key: profile.session_key)
+    @token = JsonWebToken.encode(profile_id: profile.id)
   end
 
   def profile
