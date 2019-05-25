@@ -3,6 +3,7 @@ class Api::V1::SessionsController < ApplicationController
   # POST
   def create
     new_session = Profiles::Authenticate.new(sign_in_params)
+    new_session.call
 
     if new_session&.token
       cookie_signed_jwt(new_session.token)

@@ -12,10 +12,6 @@ class Profiles::Authenticate
     produce_token
   end
 
-  def self.call(**opts)
-    self.new(**opts).call
-  end
-
   private
 
   attr_reader :username, :email, :password

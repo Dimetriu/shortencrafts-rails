@@ -8,4 +8,11 @@ FactoryBot.define do
     password_confirmation { password }
     confirmed_at { nil }
   end
+
+  # factory :invalid_profile do
+  #   username { '' }
+  #   email { '' }
+  #   password { '' }
+  #   password_confirmation { '' }
+  # end
 end

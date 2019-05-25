@@ -48,6 +48,7 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
+  gem 'json-schema'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

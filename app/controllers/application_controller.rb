@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
 
     begin
       @profile = AuthorizeApiRequest.call(jwt)
-    rescue => JWT::ExpiredSignature
+    rescue JWT::ExpiredSignature
       cookies.delete(:jwt)
       head :unauthorized
     end
