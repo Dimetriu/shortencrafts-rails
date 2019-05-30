@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   defaults format: :json do
+
     namespace :api do
       namespace :v1 do
-        root 'app#index', controller: 'app'
+        root 'app#all'
+
+        resource :auth, only: [], controller: 'auth' do
+          post :login
+          get :logout
+        end
 
         resources :profiles, only: [:create, :update]
 

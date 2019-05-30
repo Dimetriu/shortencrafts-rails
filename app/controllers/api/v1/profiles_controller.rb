@@ -1,22 +1,21 @@
 class Api::V1::ProfilesController < ApplicationController
-
   # POST
   def create
-    # new_profile = Profiles::Build.new(profile_params)
-    # new_profile.call
+    profile = Profile.new(profile_params)
 
-    # if new_profile.token
-    #   cookie_signed_jwt(new_profile.token)
+    if profile.save!
+      jwt = JsonWebToken.encode(profile_id: profile.id)
 
-    #   render json: { profile: new_profile },
-    #   status: :created
-    # else
-    #   render json: { errors: new_profile.errors },
-    #   status: :unprocessable_entity
-    # end
+      cookies.signed[:jwt] = {
+        value: jwt,
+        httponly: true
+      }
 
-    profile = Profile.create(profile_params)
-    render json: profile
+      render json: profile, status: :created
+    else
+      render json: profiles.errors.messages,
+      status: :unprocessable_entity
+    end
 
   end
 
@@ -28,7 +27,7 @@ class Api::V1::ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.permit(
+    params.require(:profile).permit(
       :username,
       :email,
       :password,

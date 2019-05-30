@@ -1,54 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// const App: React.FC = () => {
+const App: React.FC = () => {
+  const [resp, setResp] = useState({
+    username: "",
+    email: "",
+  });
 
-//   // const hi = (e: any) => {
-//   //   e.preventDefault();
-
-//   //   window.fetch('api/v1')
-//   //     .then(res => res.json())
-//   //     .then(json => console.log(json))
-//   //     .catch(error => console.log(error));
-//   // }
-
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           {}
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-class App extends React.Component {
-  componentDidMount() {
-    window.fetch('api/v1')
-      .then(res => res.json())
-      .then(json => console.log(json))
+  useEffect(() => {
+    const api = () => {
+      window.fetch('api/v1/', {
+        credentials: 'include'
+      }).then(res => res.json())
+      .then(json => setResp(json["current_profile"]))
       .catch(error => console.log(error));
-  }
+    }
 
-  render() {
+    return api();
+  });
+
     return(
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            {}
-          </p>
+          {/* <p>{`${resp.username} and ${resp.email}`}</p> */}
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -59,7 +35,6 @@ class App extends React.Component {
           </a>
         </header>
       </div>
-    );}
-}
+);}
 
 export default App;

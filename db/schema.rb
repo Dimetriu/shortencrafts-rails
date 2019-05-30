@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_05_16_072538) do
     t.string "username", default: "", null: false
     t.string "email", default: "", null: false
     t.string "password_digest", default: "", null: false
-    t.uuid "verification_token", default: -> { "uuid_generate_v4()" }, null: false
+    t.uuid "verification_token", default: "037d053d-5b79-43bf-9508-aca4b376acd5", null: false
     t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

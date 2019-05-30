@@ -1,7 +1,7 @@
 class AuthorizeApiRequest
   class << self
     def call(token)
-      return token_invalid unless token
+      return "Token invalid" unless token
 
       payload = JsonWebToken.decode(token)
       id = payload[:profile_id] if payload

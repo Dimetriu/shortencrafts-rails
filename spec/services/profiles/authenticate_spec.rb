@@ -16,31 +16,22 @@ RSpec.describe Profiles::Authenticate, type: :service do
       )
     }
 
-    context "with valid username and password" do
-      subject(:token) {
+    context "with valid email and password" do
+      subject(:auth) {
         Profiles::Authenticate.new(
-          username: profile.username,
-          password: "password"
+          profile.email,
+          profile.password
         )
-        .call
       }
 
       it "returns a token" do
+        token = auth.call
         expect(token).to be_instance_of(String)
       end
-    end
 
-    context "with valid email and password" do
-      subject(:token) {
-        Profiles::Authenticate.new(
-          username: profile.email,
-          password: "password"
-        )
-        .call
-      }
-
-      it "returns a token" do
-        expect(token).to be_instance_of(String)
+      it "returns a contains the profile" do
+        auth.call
+        expect(auth.profile).to eq(profile)
       end
     end
 

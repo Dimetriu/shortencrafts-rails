@@ -1,26 +1,19 @@
 class ApplicationController < ActionController::API
 
-  attr_reader :profile
+  attr_reader :current_profile
   # Enables cookie storage
   include ::ActionController::Cookies
+  include CookiesEncryptedJwt
 
   private
 
-  def cookie_signed_jwt(jwt)
-    cookies.signed[:jwt] = {
-        value: jwt,
-        httponly: true
-      }
-  end
-
   def authenticate_request!
-    jwt = cookies.signed[:jwt]
-    return head :unauthorized unless jwt
+    refresh_jwt!
 
     begin
-      @profile = AuthorizeApiRequest.call(jwt)
+      @current_profile = AuthorizeApiRequest.call(get_jwt)
     rescue JWT::ExpiredSignature
-      cookies.delete(:jwt)
+      delete_jwt
       head :unauthorized
     end
 

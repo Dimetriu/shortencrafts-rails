@@ -19,7 +19,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
 
       t.uuid :verification_token,
         null: false,
-        default: 'uuid_generate_v4()'
+        default: SecureRandom.uuid
 
       t.datetime :confirmed_at
 
