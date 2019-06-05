@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 interface CollapsibleProps {
   buttonVariant?: string
   children?: any
-  content: any
-  onClick: (
+  content?: any
+  onClick?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void
   toggleIcon: JSX.Element
@@ -14,10 +14,8 @@ interface CollapsibleProps {
 
 const Collapsible = (props: CollapsibleProps) => {
   const {
-    buttonVariant,
     children,
     content,
-    onClick,
     toggleIcon,
     toggleIconAfter,
     variant,
@@ -35,9 +33,9 @@ const Collapsible = (props: CollapsibleProps) => {
         {children}
 
         <button
-          onClick={onClick}
+          onClick={toggleCollapse}
           // "ToggleMenu"
-          className={buttonVariant}
+          className="ToggleMenu"
         >
           {Collapse ? toggleIconAfter : toggleIcon}
         </button>

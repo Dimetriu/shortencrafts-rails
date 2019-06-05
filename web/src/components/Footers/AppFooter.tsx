@@ -1,34 +1,28 @@
 import React from 'react';
+import './styles.css';
 
 const AppFooter: React.FC = () => {
-  const currentYear: number = new Date().getFullYear();
-  const creationYear: number = 2019;
+  let currentYear: number = new Date().getFullYear();
+  let creationYear: number = 2019;
 
   return (
-    <footer style={
+    <small>
+      &copy;&nbsp;
       {
-        alignSelf: 'center',
-        display: 'flex',
+        currentYear > creationYear ?
+        `${creationYear}` + ' - ' + `${currentYear}` :
+        currentYear
       }
-    }>
-      <small>
-        &copy;
-        {
-          currentYear > creationYear ?
-          `${creationYear}` + ' - ' + `${currentYear}` :
-          currentYear
-        }
-        <a
-          className="Nav-link"
-          href="https://github.com/Dimetriu/Shortencrafts-rails"
-          title="source"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          developed by Dmytro Rashydov
-        </a>
-      </small>
-    </footer>
+      <a
+        className="Nav-link"
+        href="https://github.com/Dimetriu/Shortencrafts-rails"
+        title="source"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        &nbsp;developed by Dmytro Rashydov
+      </a>
+    </small>
   );
 }
 

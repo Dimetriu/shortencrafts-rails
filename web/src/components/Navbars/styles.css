@@ -22,6 +22,10 @@
   color: #F16534;
 }
 
+.Nav-link-active {
+  color: #F16534 !important;
+}
+
 .ToggleMenu,
 .Nav-link-block {
   display: none;

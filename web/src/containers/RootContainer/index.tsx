@@ -1,8 +1,7 @@
 import React, {
   useState,
   useEffect,
-  lazy,
-  Suspense } from 'react';
+} from 'react';
 import './styles.css';
 import {
   BrowserRouter as Router,
@@ -29,7 +28,6 @@ const RootContainer: React.FC = () => {
 
     return(
       <Router>
-        {/* <Suspense fallback={<p>Loading...</p>}> */}
 
           <App>
             <Switch>
@@ -37,10 +35,7 @@ const RootContainer: React.FC = () => {
             </Switch>
           </App>
 
-        {/* </Suspense> */}
       </Router>
 );}
-
-// const App = lazy(() => import('../App'))
 
 export default RootContainer;

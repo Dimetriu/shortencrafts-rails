@@ -1,0 +1,13 @@
+.Nav-link {
+  color: #9B9B9B;
+  text-decoration: none;
+}
+
+.Logo {
+  color: #F16534;
+  text-decoration: none;
+}
+
+.Nav-link:hover {
+  color: #F16534;
+}
