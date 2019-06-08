@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from '.';
-import * as Field from '../Fields';
+import { Email, Password, Submit } from '../Fields';
 import { Link } from 'react-router-dom';
 
 import { submitRequest } from '../../helpers/submitRequest';
@@ -21,31 +21,32 @@ const LoginForm: React.FC = (): JSX.Element => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Field.Email
+      <Email
         value={email}
         onChange={e => setEmail(e.target.value)}
       />
-      <Field.Password
+      <Password
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
 
-      <Link
-        className="Form-row"
-        to="/"
-      >
-        Forgot password?
-      </Link>
+      <small>
+        <Link
+          className="Form-row helper-text"
+          to="/"
+        >
+          Forgot password?
+        </Link>
+      </small>
 
-      <Field.Submit htmlValue="Log in" />
+      <Submit htmlValue="Log in" />
 
       <p style={{ color: '#9B9B9B' }}>
         Don't have an Account?&nbsp;
-        <Link to="/signup">
+        <Link to="/signup" className="helper-text">
           Create One
         </Link>
       </p>
-
     </Form>
 );}
 

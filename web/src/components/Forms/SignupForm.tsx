@@ -9,11 +9,13 @@ const SignupForm: React.FC = (): JSX.Element => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [passwordConfirmation, setPasswordConfirmation] = useState("")
 
   const payload = {
     username: username,
     email: email,
     password: password,
+    password_confirmation: passwordConfirmation
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -35,6 +37,25 @@ const SignupForm: React.FC = (): JSX.Element => {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
+      <Field.Password
+        matchError={
+          (password == passwordConfirmation) ?
+            "" :
+            `Password doesn't match`
+        }
+        value={passwordConfirmation}
+        onChange={e => setPasswordConfirmation(e.target.value)}
+      />
+
+      <Field.Submit htmlValue="Sign up" />
+
+      <p style={{ color: '#9B9B9B' }}>
+        Have an Account?&nbsp;
+        <Link to="/login" className="helper-text">
+          Log in
+        </Link>
+        &nbsp;please
+      </p>
     </Form>
 );}
 

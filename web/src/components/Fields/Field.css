@@ -39,20 +39,19 @@
 
 .Form-input,
 .label-before,
-.Form-submit {
-  padding: .7rem;
-}
-
 .Form-action {
-  margin-top: 1rem;
-  padding: calc(.7rem + 2px);
+  padding: .6rem;
 }
 
+.Form-input,
+.Form-action {
+  border-radius: .2rem;
+}
 
 .Form-input {
   background: transparent;
   border: 1px solid #9B9B9B;
-  font-size: 1.2em;
+  font-size: 1rem;
   z-index: 1;
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, FieldProps } from './Field';
+import { Field, FieldProps } from '../Field';
 
 export const EmailField: React.FC<FieldProps> =
   (props: FieldProps) => {

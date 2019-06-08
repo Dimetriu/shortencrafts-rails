@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, FieldProps } from './Field';
+import { Field, FieldProps } from '../Field';
 
 export const PasswordField: React.FC<FieldProps> =
   (props: FieldProps) => {

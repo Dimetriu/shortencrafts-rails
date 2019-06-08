@@ -1,10 +1,9 @@
 .App {
   display: flex;
+  position: relative;
   flex-flow: column wrap;
   text-align: center;
   text-rendering: optimizeSpeed;
-
-  position: relative;
 }
 
 .App-header {
