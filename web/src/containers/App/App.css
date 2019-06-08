@@ -42,14 +42,14 @@
 @media (orientation: portrait) {
 
   .App-body {
-    min-height: 85vh;
+    min-height: 80vh;
   }
 }
 
 @media (orientation: landscape) {
 
   .App-body {
-    min-height: 75vh;
+    min-height: 70vh;
     margin-bottom: 5%;
   }
 }

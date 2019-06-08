@@ -1,0 +1,66 @@
+.Form-row {
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.Form-row-hint {
+  text-align: right;
+}
+
+.standard-hint {
+  color: #9B9B9B;
+}
+
+.success-hint {
+  color: rgb(7, 95, 7);
+}
+
+.failure-hint {
+  color: rgb(209, 34, 34);
+}
+
+.Form-row-label {
+  position: absolute;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.label-before {
+  color: #9B9B9B;
+  z-index: 0;
+}
+
+.label-after {
+  color: #F16534;
+  margin: -1.5rem .7rem;
+}
+
+.Form-input,
+.label-before,
+.Form-submit {
+  padding: .7rem;
+}
+
+.Form-action {
+  margin-top: 1rem;
+  padding: calc(.7rem + 2px);
+}
+
+
+.Form-input {
+  background: transparent;
+  border: 1px solid #9B9B9B;
+  font-size: 1.2em;
+  z-index: 1;
+}
+
+.Form-input-error {
+  box-shadow: 0 0 3px rgb(209, 34, 34);
+}
+
+.Form-input:focus {
+  border: 1px solid #F16534;
+}
+

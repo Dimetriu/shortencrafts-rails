@@ -1,0 +1,29 @@
+.Auth-container {
+  background: #FFFFFF;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 5vh auto;
+}
+
+.Auth-container h2 {
+  padding-bottom: 3%;
+}
+
+.Form-heading {
+  color: #9B9B9B;
+}
+
+@media (orientation: portrait) {
+
+  .Auth-container {
+    width: 85vw;
+  }
+}
+
+@media (orientation: landscape) {
+
+  .Auth-container {
+    width: 25rem;
+  }
+}
+
