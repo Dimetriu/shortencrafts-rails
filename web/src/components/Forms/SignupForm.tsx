@@ -39,7 +39,7 @@ const SignupForm: React.FC = (): JSX.Element => {
       />
       <Field.Password
         matchError={
-          (password == passwordConfirmation) ?
+          (password === passwordConfirmation) ?
             "" :
             `Password doesn't match`
         }

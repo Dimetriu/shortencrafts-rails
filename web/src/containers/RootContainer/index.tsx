@@ -12,28 +12,28 @@ import Routes from '../../routes';
 import '../../lib/fa-library';
 
 const RootContainer: React.FC = () => {
-  const [resp, setResp] = useState({});
+  // const [resp, setResp] = useState({});
 
   useEffect(() => {
-    const api = () => {
-      window.fetch('api/v1/', {
-        credentials: 'include'
-      }).then(res => res.json())
-      .then(json => console.log({ ...json }))
-      .catch(error => console.log(error));
-    }
+    // const api = () => {
+    //   window.fetch('api/v1/', {
+    //     credentials: 'include'
+    //   }).then(res => res.json())
+    //     .then(json => setResp({ ...json }))
+    //   .catch(error => console.log(error));
+    // }
 
-    return api();
+    // return api();
   });
 
     return(
       <Router>
 
-          <App>
-            <Switch>
-              <Routes />
-            </Switch>
-          </App>
+        <App>
+          <Switch>
+            <Routes />
+          </Switch>
+        </App>
 
       </Router>
 );}

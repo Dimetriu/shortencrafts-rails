@@ -16,6 +16,9 @@ const LoginForm: React.FC = (): JSX.Element => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email && !password) {
+      return console.log("invalid form data");
+    }
     console.log(submitRequest(payload));
   }
 
