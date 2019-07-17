@@ -1,7 +1,7 @@
-const logger =
-  store =>
-    next =>
-      action => {
+const logger: any =
+  (store: any) =>
+    (next: any) =>
+      (action: any) => {
         console.group(action.type)
         console.info('dispatching', action)
         let result = next(action)

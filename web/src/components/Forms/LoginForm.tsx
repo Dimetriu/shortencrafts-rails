@@ -3,7 +3,7 @@ import Form from '.';
 import { Email, Password, Submit } from '../Fields';
 import { Link } from 'react-router-dom';
 
-import { submitRequest } from '../../helpers/submitRequest';
+import { postRequest } from '../../requests';
 
 const LoginForm: React.FC = (): JSX.Element => {
   const [email, setEmail] = useState("")
@@ -19,7 +19,11 @@ const LoginForm: React.FC = (): JSX.Element => {
     if (!email && !password) {
       return console.log("invalid form data");
     }
-    console.log(submitRequest(payload));
+
+    postRequest(
+      `${process.env.REACT_APP_API_LOGIN}`,
+      payload
+    );
   }
 
   return (

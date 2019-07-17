@@ -27,7 +27,7 @@ class Api::V1::ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(
+    params.permit(
       :username,
       :email,
       :password,

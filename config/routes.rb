@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1 do
-        root 'app#all'
+        root 'app#index'
 
         resource :auth, only: [], controller: 'auth' do
           post :login

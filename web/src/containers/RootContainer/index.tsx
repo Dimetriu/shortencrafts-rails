@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react';
+import React from 'react';
 import './styles.css';
 import {
   BrowserRouter as Router,
@@ -11,30 +8,29 @@ import App from '../App';
 import Routes from '../../routes';
 import '../../lib/fa-library';
 
+
 const RootContainer: React.FC = () => {
   // const [resp, setResp] = useState({});
 
-  useEffect(() => {
-    // const api = () => {
-    //   window.fetch('api/v1/', {
-    //     credentials: 'include'
-    //   }).then(res => res.json())
-    //     .then(json => setResp({ ...json }))
-    //   .catch(error => console.log(error));
-    // }
+  // useEffect(() => {
+  //   const api = () => {
+  //     window.fetch('api/v1/', {
+  //       credentials: 'include'
+  //     }).then(res => res.json())
+  //       .then(json => setResp({ ...json }))
+  //     .catch(error => console.log(error));
+  //   }
 
-    // return api();
-  });
+  //   return api();
+  // });
 
     return(
       <Router>
-
         <App>
           <Switch>
             <Routes />
           </Switch>
         </App>
-
       </Router>
 );}
 

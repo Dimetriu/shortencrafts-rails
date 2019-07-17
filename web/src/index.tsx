@@ -7,7 +7,7 @@ import configureStore from './store/configureStore';
 
 import RootContainer from './containers/RootContainer';
 
-const store: any = configureStore();
+const store: any = configureStore(null);
 
 render(
   <Provider store={store}>

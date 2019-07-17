@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Form from '.';
 import * as Field from '../Fields';
 import { Link } from 'react-router-dom';
-
-import { submitRequest } from '../../helpers/submitRequest';
+import { signUpAction } from '../../actions/profile';
+import { postRequest } from '../../requests';
+import { connect } from 'react-redux';
 
 const SignupForm: React.FC = (): JSX.Element => {
   const [username, setUsername] = useState("")
@@ -20,7 +21,13 @@ const SignupForm: React.FC = (): JSX.Element => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(submitRequest(payload));
+
+    return postRequest(
+       `${process.env.REACT_APP_API_SIGNUP}`,
+       payload
+    );
+
+    // dispatchEvent(signUpAction(payload));
   }
 
   return (

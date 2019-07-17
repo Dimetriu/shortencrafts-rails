@@ -11,7 +11,7 @@ const AppFooter: React.FC = () => {
       {
         currentYear > creationYear ?
         `${creationYear}` + ' - ' + `${currentYear}` :
-        currentYear
+        `${currentYear}`
       }
       <a
         className="Nav-link"

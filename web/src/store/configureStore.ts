@@ -9,7 +9,7 @@ import rootReducer from '../reducers/rootReducer';
 import loggerMiddleware from '../middlewares/logger';
 import monitorReducerEnhancer from '../enhancers/monitorReducer';
 
-export default function configureStore(preloadedState) {
+export default function configureStore(preloadedState: any | null) {
   const middlewares = [loggerMiddleware, createSagaMiddleware()]
   const middlewareEnhancer = applyMiddleware(...middlewares)
 

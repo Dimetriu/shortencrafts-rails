@@ -5,13 +5,13 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEllipsisV, faTimes, faChevronRight, faChevronLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
 
-library.add([
+library.add(
   faEllipsisV,
   faTimes,
   faChevronRight,
   faChevronLeft,
   faCheck,
-]);
+);
 
 export const ellipsisV = () => {
   return (

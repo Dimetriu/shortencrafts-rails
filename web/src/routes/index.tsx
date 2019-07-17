@@ -16,11 +16,15 @@ const Routes: React.FC = (): JSX.Element => {
       <Suspense fallback={<h1>signup</h1>}>
         <Route path="/signup" component={Signup} />
       </Suspense>
+      <Suspense fallback={<h1>DASHBOARD</h1>}>
+        <Route path="/dashboard" component={Dashboard} />
+      </Suspense>
     </>
   );
 }
 
 const Login = lazy(() => import('../containers/Auth/Login'))
 const Signup = lazy(() => import('../containers/Auth/Signup'))
+const Dashboard = lazy(() => import('../containers/Dashboard'))
 
 export default Routes;
