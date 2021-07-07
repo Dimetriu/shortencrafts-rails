@@ -1,0 +1,30 @@
+.Auth-container {
+  border-radius: .2rem;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 1vh auto;
+}
+
+.Form-heading,
+.helper-text {
+  color: #9B9B9B;
+}
+
+.helper-text:hover {
+  color: #F16534;
+}
+
+@media (orientation: portrait) {
+
+  .Auth-container {
+    width: 85vw;
+  }
+}
+
+@media (orientation: landscape) {
+
+  .Auth-container {
+    width: 22rem;
+  }
+}
+

@@ -1,3 +1,21 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  defaults format: :json do
+
+    namespace :api do
+      namespace :v1 do
+        root 'app#index'
+
+        resource :auth, only: [], controller: 'auth' do
+          post :login
+          get :logout
+        end
+
+        resources :profiles, only: [:create, :update]
+
+        patch 'verify-email/:virifcation_token',
+          to: 'profiles#verify_email',
+          as: 'verify_email'
+      end
+    end
+  end
 end

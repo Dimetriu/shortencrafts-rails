@@ -1,0 +1,62 @@
+.TopNav {
+  display: flex;
+  font-size: calc(10px + 1.5vh);
+  padding: 3vh;
+}
+
+.TopNav>.Nav-link:not(:first-child) {
+  margin-left: 2vw;
+}
+
+.Nav-link {
+  color: #9B9B9B;
+  text-decoration: none;
+}
+
+.Logo {
+  color: #F16534;
+  text-decoration: none;
+}
+
+.Nav-link:hover {
+  color: #F16534;
+}
+
+.Nav-link-active {
+  color: #F16534 !important;
+}
+
+.ToggleMenu,
+.Nav-link-block {
+  display: none;
+}
+
+.row-clearfix {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .TopNav>.Nav-link:not(:first-child) {
+    display: none;
+  }
+
+  .ToggleMenu {
+    cursor: pointer;
+    display: block;
+  }
+
+  .ToggleMenu:hover {
+    color: #F16534;
+  }
+
+  .Nav-link-block {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Nav-link-block>.Nav-link {
+    font-size: calc(10px + 2vmin);
+    padding: 2vh 0;
+  }
+}

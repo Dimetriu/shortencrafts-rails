@@ -24,7 +24,11 @@ module ShortencraftsRails
 
     config.generators do |g|
       g.test_framework :rspec
+      g.factory_bot suffix: 'factory'
     end
+
+    # Add middleware to use cookies
+    config.middleware.use ActionDispatch::Cookies
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

@@ -1,0 +1,16 @@
+export const auth = {
+  SIGN_UP: "SIGN_UP",
+  SIGN_UP_SUCCESS: "SIGN_UP_SUCCESS",
+  SIGN_UP_ERROR: "SIGN_UP_ERROR",
+
+  LOG_IN: "LOG_IN",
+  LOG_IN_SUCCESS: "LOG_IN_SUCCESS",
+  LOG_IN_ERROR: "LOG_IN_ERROR",
+
+  LOG_OUT: "LOG_OUT",
+}
+
+export const session = {
+  LOGGED_IN: "LOGGED_IN",
+  LOGGED_OUT: "LOGGED_OUT"
+}
